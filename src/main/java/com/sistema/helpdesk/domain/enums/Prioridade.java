@@ -1,11 +1,11 @@
 package com.sistema.helpdesk.domain.enums;
 
-public enum Status {
-    ABERTO(0,"ABERTO"), ANDAMENTO(1,"ANDAMENTO"), ENCERRADO(2,"ENCERRADO");
+public enum Prioridade {
+    BAIXA(0,"BAIXA"), MEDIA(1,"MEDIA"), ALTA(2,"ALTA");
     private Integer codigo;
     private String descricao;
 
-    Status(Integer codigo, String descricao) {
+    Prioridade(Integer codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -18,14 +18,14 @@ public enum Status {
         return descricao;
     }
 
-    public static Status toEnum(Integer cod){
+    public static Prioridade toEnum(Integer cod){
         if(cod == null){
             return null;
-        }for(Status x : Status.values()){
+        }for(Prioridade x : Prioridade.values()){
             if(cod.equals(x.getCodigo())){
                 return x;
             }
         }
-        throw new IllegalArgumentException("Status inválido");
+        throw new IllegalArgumentException("Prioridade inválida");
     }
 }
