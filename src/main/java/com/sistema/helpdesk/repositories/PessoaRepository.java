@@ -1,11 +1,14 @@
 package com.sistema.helpdesk.repositories;
 
-import com.sistema.helpdesk.domain.Pessoa;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sistema.helpdesk.domain.Pessoa;
+
 public interface PessoaRepository extends JpaRepository<Pessoa, Integer> {
+
     Optional<Pessoa> findByCpf(String cpf);
     Optional<Pessoa> findByEmail(String email);
+
 }
